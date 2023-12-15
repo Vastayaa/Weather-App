@@ -1,0 +1,151 @@
+/* Fonts */
+@import url('../fonts/Fonts.css');
+
+/* Document */
+:root, input {
+    font-family: RubikDirt;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Window */
+.wrapper {
+    position: absolute;
+    overflow: hidden;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.mainWindow {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    background-image: url("../../public/assets/1.jpg");
+    background-size: 100% 100%;
+    animation: bg-zoom infinite 40s linear alternate;
+    transition: background-image 150ms linear;
+
+    z-index: 0;
+}
+
+.background.heap {
+    background-image: url("../../public/assets/2.jpg");
+    transition: background-image 150ms linear;
+    opacity: 0.8;
+}
+
+.background.cold {
+    background-image: url("../../public/assets/3.jpg");
+    transition: background-image 150ms linear;
+    opacity: 0.8;
+}
+
+
+@keyframes bg-zoom {
+    from { transform: scale(1.0); }
+    to { transform: scale(1.2); }
+}
+
+/* Header */
+.header {
+    width: 70%;
+    height: 5%;
+    margin-top: 3%;
+
+    color: #313131;
+    background-color: rgba(255, 255, 255, 0.4);
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.25));
+    font-size: 2.5vmin;
+
+    border: none;
+    border-radius: 0 16px 0 16px;
+    outline: none;
+    appearance: none;
+
+    transition: 0.4s;
+    z-index: 1;
+}
+
+.header:focus {
+    background-color: rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* Body */
+.locationBox,
+.weatherBox {
+    text-align: center;
+    margin-top: 4%;
+    z-index: 1;
+}
+
+.locationBox .location {
+    color: rgb(255, 189, 227);
+    font-size: 9vmin;
+    text-align: center;
+    font-weight: 500;
+    filter: drop-shadow(3px 6px rgba(0, 0, 0, 0.25));
+}
+
+.locationBox .date {
+    color: rgb(255, 255, 255);
+    font-size: 5vmin;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    filter: drop-shadow(3px 6px rgba(0, 0, 0, 0.25));
+    text-shadow: 1px 0 black, 0 -1px black, -1px 0 black, 0 1px black;
+}
+
+.weatherBox .temp {
+    color: rgb(255, 189, 227);
+    font-size: 14vmin;
+    text-align: center;
+    font-weight: 400;
+    filter: drop-shadow(3px 6px rgba(0, 0, 0, 0.35));
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+}
+
+.weatherBox .weather {
+    margin-top: 5%;
+    color: rgb(255, 255, 255);
+    font-size: 5vmin;
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+    filter: drop-shadow(3px 6px rgba(0, 0, 0, 0.25));
+    text-shadow: 1px 0 black, 0 -1px black, -1px 0 black, 0 1px black;
+}
+
+/* For errors */
+.errWrap {
+    width: 40%;
+    height: 55%;
+    margin-top: 5%;
+    rotate: 5deg;
+    border-radius: 5px;
+    z-index: 1;
+}
