@@ -142,10 +142,10 @@ body {
 
 /* For errors */
 .errWrap {
-    width: 40%;
-    height: 55%;
+    width: 50%;
+    height: 70%;
     margin-top: 5%;
     rotate: 5deg;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 1;
 }
